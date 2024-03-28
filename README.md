@@ -143,9 +143,14 @@ for n in range(1, 10):
 ```
 
 
+#### Apartir de este punto los codigos admiten un promedio del numero 150, es decir, Ingresar numero real = 456, al ingresar un valor mas o menos mayo de 150 en algunos codigos, va dar error, esto debido a que la cantidad de calculos que se realiza, son tantas que marca error
+[![Captura11.png](https://i.postimg.cc/DmVHmbCb/Captura11.png)](https://postimg.cc/FkZDB1X9)
+#### De pronto, se puedan digitar numero grandes, pero lo más probable es que de error, gracias por leer esta pequeña información
+
+
+
 #### 8. Diseñar una función que permita calcular una aproximación de la función exponencial alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Maclaurin. Nota: use math para traer la función exponencial y mostrar la diferencia entre el valor real y la aproximación.
 
-[![Captura4.png](https://i.postimg.cc/52gY443K/Captura4.png)](https://postimg.cc/ts1CDH8F)
 
 ``` python
 #Se importa el módulo math para utilizar la función factorial y la función exponencial
