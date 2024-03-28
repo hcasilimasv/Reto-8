@@ -143,9 +143,9 @@ for n in range(1, 10):
 ```
 
 
-#### Apartir de este punto los codigos no admiten un numero mayor a 150, es decir, Ingresar numero real = 456, al ingresar un valor mas o menos mayor a 150 en algunos codigos del punto 8 al 10, va dar error, esto debido a que la cantidad de calculos que se realiza, son tantas que marca error
+#### A partir de este punto, los códigos no admiten un número mayor a 150. Es decir, "Ingresar un número real = 456", al intentar ingresar un valor mayor o menor a 150 en algunos códigos del punto 8 al 10, se generará un error. Esto se debe a la cantidad de cálculos que se realizan, los cuales son tantos que provocan un error.
 [![Captura11.png](https://i.postimg.cc/DmVHmbCb/Captura11.png)](https://postimg.cc/FkZDB1X9)
-#### De pronto, se puedan digitar numero grandes, pero lo más probable es que de error, gracias por leer esta pequeña información
+#### Aunque es posible que se puedan ingresar números grandes, pero lo más probable es que marque error. Gracias por leer esta pequeña información.
 
 
 
