@@ -157,27 +157,38 @@ def aprox_exp(x, n):
 
 #Se recorre los primeros n términos de la serie de Maclaurin para la exponencial
     for k in range(n):
+
 #Utilizamos esta formula para calcular cada término de la serie y los suma a la aproximación y regresamos la funcion
         aprox += (x ** k) / math.factorial(k)
     return aprox
 def main():
 
 #Se solicita al usuario que ingrese un número real y el número de términos a ejecutar
-    x = float(input("Escribe un numero real"))
-    n = int(input("Escribe el numero del terminos a ejecutar"))
+    x = float(input("Escribe un numero real: "))
+    n = int(input("Escribe el numero de términos a ejecutar: "))
 
 #Se calcula la aproximación de "e" elevado a "x" utilizando la función definida
     aprox = aprox_exp(x, n)
-
+    
 #Se calcula el valor real de "e" elevado a "x" utilizando la función de exponencial de math
     v_real = math.exp(x)
 
-#Imprimimos
-    print("Aproximación de e elevado a " + str(x) + ": " + str(aprox) + "")
-    print("El valor real de e elevado a " + str(x) + ": " + str(v_real) + "")
-    print("Diferencia: " + str(abs(aprox - v_real)) + "")
+#Se calcula el valor del error obtenido
+    error = abs((aprox - v_real) / v_real) * 100
 
- #Se Llamamos a la función main si el script es ejecutado directamente
+#Imprimimos
+    print("Aproximación de e elevado a " + str(x) + ": " + str(aprox))
+    print("El valor real de e elevado a " + str(x) + ": " + str(v_real))
+    print("Diferencia: " + str(abs(aprox - v_real)))
+
+#Creamos un bucle para calcular que el error no se mayor a 0.1%
+    while error >= 0.1:
+        n += 1
+        aprox = aprox_exp(x, n)
+
+#Imprimimos y se Llamamos a la función main si el script es ejecutado directamente
+        error = abs((aprox - v_real) / v_real) * 100 
+    print("Se obtiene menos del 0.1% de error con " + str(n) + " términos.")
 if __name__ == "__main__":
     main()
 ```
@@ -204,8 +215,8 @@ def aprox_seno(x, n):
 def main():
 
 #Solicitamos al usuario que ingrese un número real y el número de términos a ejecutar
-    x = float(input("Escribe un numero real "))
-    n = int(input("Ingrese el número de términos a ejecutar"))
+    x = float(input("Escribe un numero real: "))
+    n = int(input("Ingrese el número de términos a ejecutar: "))
 
 #Se calcula la aproximación del seno de x utilizando la función definida
     aprox = aprox_seno(x, n)
@@ -214,11 +225,21 @@ def main():
     v_real = math.sin(x)
 
 #Se imprime
-    print("Aproximación de sin(x) " + str(aprox) + "")
-    print("El valor real de sin(x): " + str(v_real) + "")
-    print("Diferencia: " + str(abs(aprox - v_real)) + "")
+    print("Aproximación de sin(x): " + str(aprox))
+    print("El valor real de sin(x): " + str(v_real))
+    print("Diferencia: " + str(abs(aprox - v_real)))
 
-#Llamamos a la función main si el script es ejecutado directamente
+#Se calcula el valor del error obtenido
+    error = abs((aprox - v_real) / v_real) * 100
+
+#Creamos un bucle para calcular que el error no se mayor a 0.1% e imprimimos
+    while error >= 0.1:
+        n += 1
+        aprox = aprox_seno(x, n)
+        error = abs((aprox - v_real) / v_real) * 100
+    print("Se obtiene menos del 0.1% de error con " + str(n) + " términos.")
+
+#Se Llamamos a la función main si el script es ejecutado directamente
 if __name__ == "__main__":
     main()
 ```
@@ -246,15 +267,15 @@ def aprox_arcotan(x, n):
 def main():
 
 #Se solicita al usuario que ingrese un número real en el rango [-1, 1]
-    x = float(input("Escribe un numero real entre [-1, 1] "))
+    x = float(input("Escribe un numero real entre [-1, 1]: "))
 
 #Se verifica si el número está dentro del rango permitido
     if x < -1 or x > 1:
         print("El valor debe estar en el rango [-1, 1].")
         return
-
+    
 #Solicitamos al usuario que ingrese el número de términos a ejecutar
-    n = int(input("Ingrese el número de términos a ejecutar"))
+    n = int(input("Ingrese el número de términos a ejecutar: "))
 
 #Calculamos la aproximación de la arcotangente de x utilizando la función definida
     aprox = aprox_arcotan(x, n)
@@ -263,11 +284,21 @@ def main():
     v_real = math.atan(x)
 
 #Se imprime
-    print("Aproximación de arctan(x) " + str(aprox) + "")
-    print("El valor real de arctan(x): " + str(v_real) + "")
-    print("Diferencia: " + str(abs(aprox - v_real)) + "")
+    print("Aproximación de arctan(x): " + str(aprox))
+    print("El valor real de arctan(x): " + str(v_real))
+    print("Diferencia: " + str(abs(aprox - v_real)))
 
-#Se llama a la función main si el script es ejecutado directamente
+#Se calcula el valor del error obtenido
+    error = abs((aprox - v_real) / v_real) * 100
+
+#Creamos un bucle para calcular que el error no se mayor a 0.1% e imprimimos
+    while error >= 0.1:
+        n += 1
+        aprox = aprox_arcotan(x, n)
+        error = abs((aprox - v_real) / v_real) * 100
+    print("Se obtiene menos del 0.1% de error con " + str(n) + " términos.")
+
+#Se Llamamos a la función main si el script es ejecutado directamente
 if __name__ == "__main__":
     main()
 ```
